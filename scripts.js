@@ -1,10 +1,20 @@
-$(document).ready(onReady);
+$(document).ready(onReady); // load
 
 function onReady() {
-    console.log('Hear, hear!')
-}
+    console.log('Hear, hear!') // test
 
-console.log('Game on!');
+    $('#generate-button').on('click', gameOn); //event listener for generate button
+} // end onReady function
+
+console.log('Game on!'); // test
+
+function gameOn(event) {
+    event.preventDefault(); // prevent default response
+    console.log('generate!') // test if function links to button click
+    $('main').append()
+
+
+} // end function gameOn
 
 
 
