@@ -5,18 +5,27 @@ function onReady() {
 
     $('#generate-button').on('click', gameOn); //event listener for generate button
 
-    $('main').on('click', '.yellow-button', makeYellow);
+    $('main').on('click', '.yellow-button', makeYellow); // event listener for yellow button
+
+    $('main').on('click', '.delete-button', goAway); // event listener for delete button
 
 } // end onReady function
 
 
 console.log('Game on!'); // test
 
+let lineCounter = 0;
+
 function gameOn(event) { // event handler for generate button
     event.preventDefault(); // prevent default response
     console.log('generate!') // test if function links to button click
+    
+    lineCounter++;
+
+   
     $('main').append(`
         <div class="red-field">
+        <p>${lineCounter}</p>
         <div class="yellow-button"><button id="make-yellow">MAKE YELLOW!</button></div>
         <div class="delete-button"><button id="go-away">GO AWAY!</button></div>
         </div>
@@ -25,13 +34,15 @@ function gameOn(event) { // event handler for generate button
 } // end function gameOn
 
 function makeYellow() { //event handler for make yellow button
-    console.log('yellow button works!');
-    $('.red-field').css('background-color', 'yellow');
+    console.log('yellow button works!'); // log to test
+    $(this).parent().css('background-color', 'yellow');
 
 
-}
+} // end makeYellow function
 
-
+function goAway() { // event handler for go away button
+    console.log('go away button works!') // log to test
+} // end goAway function
 
 
 
