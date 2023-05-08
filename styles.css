@@ -2,6 +2,6 @@ body {
     background-color: seagreen;
 }
 
-/* give div element red color {
+.red-field {
     background-color: red;
-} */
+}

@@ -4,19 +4,32 @@ function onReady() {
     console.log('Hear, hear!') // test
 
     $('#generate-button').on('click', gameOn); //event listener for generate button
+
+    $('main').on('click', '.yellow-button', makeYellow);
+
 } // end onReady function
+
 
 console.log('Game on!'); // test
 
-function gameOn(event) {
+function gameOn(event) { // event handler for generate button
     event.preventDefault(); // prevent default response
     console.log('generate!') // test if function links to button click
-    $('main').append()
-
+    $('main').append(`
+        <div class="red-field">
+        <div class="yellow-button"><button id="make-yellow">MAKE YELLOW!</button></div>
+        <div class="delete-button"><button id="go-away">GO AWAY!</button></div>
+        </div>
+    `)
 
 } // end function gameOn
 
+function makeYellow() { //event handler for make yellow button
+    console.log('yellow button works!');
+    $('.red-field').css('background-color', 'yellow');
 
+
+}
 
 
 
